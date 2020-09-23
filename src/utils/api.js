@@ -70,7 +70,7 @@
 			if (res.ok) {
 				return res.json()
 			}
-		return Promise.reject('что-то не так!!')
+		return Promise.reject(`Ошибка: ${res.status}`)
 		})
 	
 	}
@@ -94,7 +94,7 @@
 				if (res.ok) {
 					return res.json()
 				}
-			return Promise.reject('что-то не так!!')
+			return Promise.reject(`Ошибка: ${res.status}`)
 			})
 		
 		}
@@ -108,7 +108,7 @@
 				if (res.ok) {
 					return res.json()
 				}
-			return Promise.reject('что-то не так!!')
+			return Promise.reject(`Ошибка: ${res.status}`)
 			})
 		
 		}
