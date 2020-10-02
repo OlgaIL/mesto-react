@@ -46,10 +46,11 @@
 
 
 	putAvatarInfo(avatar) {
+		console.log(avatar);
 		return fetch(`${this.baseUrl}users/me/avatar`, {
 			method: 'PATCH',
 			headers: this.headers,
-			body: JSON.stringify({'avatar' : avatar})
+			body: JSON.stringify(avatar)
 		}	
 		)
 			.then(res => {
@@ -111,6 +112,11 @@
 			return Promise.reject(`Ошибка: ${res.status}`)
 			})
 		
+		}
+
+	changeLikeCardStatus(id, isLiked) {
+		const res = isLiked ? this.putLike(id) : this.deleteLike(id);
+		return res;
 		}
 
 
